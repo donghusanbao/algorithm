@@ -3,7 +3,7 @@ package DSU;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Code2000_IsLandNum {
+public class Code200_IsLandNum {
     //方法一变量
     public int count;
 

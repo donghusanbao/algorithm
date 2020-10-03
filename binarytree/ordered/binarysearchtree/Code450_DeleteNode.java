@@ -92,4 +92,49 @@ public class Code450_DeleteNode {
         }
         return cur;
     }
+
+    //第二次提交，利用递归 100% 71.86%
+    public TreeNode deleteNode2(TreeNode root, int key) {
+        if (root == null) {
+            return null;
+        }
+
+        TreeNode node = search(root, key);
+        if (node != null){
+            node = process(root, key);
+        } else {
+            return root;
+        }
+        return node;
+    }
+
+    public TreeNode process(TreeNode node, int key) {
+        if (node.val > key) {
+            node.left = process(node.left, key);
+        } else if (node.val < key) {
+            node.right = process(node.right, key);
+        } else {
+            if (node.left == null && node.right == null){
+                return null;
+            } else if (node.left == null && node.right != null) {
+                return node.right;
+            } else if (node.right == null && node.left != null) {
+                return node.left;
+            } else {
+                TreeNode pre = null;
+                TreeNode cur = node.right;
+                while (cur.left != null) {
+                    pre = cur;
+                    cur = cur.left;
+                }
+                if (pre != null) {
+                    pre.left = cur.right;
+                    cur.right = node.right;
+                }
+                cur.left = node.left;
+                return cur;
+            }
+        }
+        return node;
+    }
 }

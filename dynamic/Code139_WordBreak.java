@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Code_WordBreak {
+public class Code139_WordBreak {
     //没有使用substring函数，性能5%
     public static boolean wordBreak(String s, List<String> wordDict) {
         Set<String> set = new HashSet<>();

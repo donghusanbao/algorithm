@@ -3,6 +3,7 @@ package questions;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 
 public class Ext_CompleteStr {
     public static boolean isCompletedString(String str) {

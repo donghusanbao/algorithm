@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.TreeMap;
 
 public class Ext_CoverWater2 {
         public static class Node {
@@ -91,5 +92,6 @@ public class Ext_CoverWater2 {
             }
             int water = coverWater(nodes, row, col);
             System.out.println(water);
+            TreeMap<Integer, Integer> treeMap = new TreeMap<>();
         }
 }

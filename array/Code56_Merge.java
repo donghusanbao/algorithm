@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Code56_Merge {
+    //92.19% 98%
     public static class Node {
         int start;
         int end;

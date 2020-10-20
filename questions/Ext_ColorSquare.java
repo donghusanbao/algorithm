@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Ext_ColorSquare {
     public static int minColorSquare(String str) {
-        int n = str.length();
+        int n = str.length(), min = Integer.MAX_VALUE;
         //假设当前位置为i，leftGreen代表包含i位置，左侧一共有几个绿色的正方形
         int[] leftGreen = new int[n + 2];
         //rightRed代表不包含i位置，右侧一共有几个红色正方形
@@ -27,13 +27,9 @@ public class Ext_ColorSquare {
             }
             rightRed[i] = rightRed[i + 1] + (str.charAt(i) == 'R' ? 1 : 0);
         }
-        int min = Integer.MAX_VALUE;
         for (int i = 0; i < n + 2; i++) {
             int pSum = leftGreen[i] + rightRed[i];
-            System.out.println(pSum);
-            if (pSum < min) {
-                min = pSum;
-            }
+            min = Math.min(pSum, min);
         }
         return min;
     }
